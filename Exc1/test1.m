@@ -1,3 +1,4 @@
+%% question (a)
 f = @(x) sin(x);
 a = 0;
 b = pi/2;
