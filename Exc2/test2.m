@@ -45,10 +45,27 @@ for i = 2:length(hs)
         fprintf('The Euler method has stabilized at r = %f\n', r_euler);
     end
     
-    % ... Repeat for other methods ...
+    % Check if the backward Euler's convergence rate is stabilizing and is near an integer
+    if abs(r_backward_euler - round(r_backward_euler)) < 0.01 && abs(r_backward_euler - r_backward_euler_prev) < 0.01
+        fprintf('The Backward Euler method has stabilized at r = %f\n', r_backward_euler);
+    end
+
+    % Check if the Crank-Nicolson's convergence rate is stabilizing and is near an integer
+    if abs(r_crank_nicolson - round(r_crank_nicolson)) < 0.01 && abs(r_crank_nicolson - r_crank_nicolson_prev) < 0.01
+        fprintf('The Crank-Nicolson method has stabilized at r = %f\n', r_crank_nicolson);
+    end
+
     
     % Update the previous convergence rate for the next iteration
     r_euler_prev = r_euler;
     r_backward_euler_prev = r_backward_euler;
     r_crank_nicolson_prev = r_crank_nicolson;
 end
+
+
+%The code compares the accuracy of three ODE solving methods: Euler, Backward Euler, 
+% and Crank-Nicolson. It calculates the error between the exact and approximated solutions 
+% for varying time step sizes and determines the convergence rate of each method as 
+% the step size is refined. The output highlights when the Euler method's convergence rate stabilizes.
+
+
