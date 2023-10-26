@@ -5,7 +5,7 @@
 exact_integral = 1;
 
 % Different numbers of subintervals
-ns = 2.^(0:8); % N values from 1 to 256
+ns = 2.^(2:8); % N values from 1 to 256
 hs = pi/2 ./ ns; % corresponding h values
 
 % Initialize error arrays
@@ -53,4 +53,28 @@ for i = 2:length(ns)
     r_simpson = log2(errors_simpson(i-1) / errors_simpson(i));
     fprintf('%f %f %f %f\n', hs(i), r_midpoint, r_trapezoidal, r_simpson);
 end
+
+
+
+
+
+%The code evaluates the accuracy of three numerical 
+% integration methods—Midpoint, Trapezoidal, and Simpson's Rule for
+% function sin(x) over the interval [0,pi/2]
+
+
+%Data Setup: Defines exact integral value, several subinterval numbers (N), 
+% and initializes error storage.
+
+%Error Calculation: For each N, it computes the integral using the three methods and 
+% calculates the absolute error.
+
+%Visualization: Plots errors against subinterval size in a log-log scale, 
+% with distinct markers for each method.
+
+%Convergence Rate Estimation: Estimates and prints the convergence rate 
+% for each method based on error ratios for successive subintervals.
+
+
+
 

@@ -50,6 +50,9 @@ function compute_errors_and_rates_incorrect()
 end
 
 
+
+
+
 %The code defines a function compute_errors_and_rates_incorrect. 
 % This function computes and compares the errors and convergence rates of the correct and 
 % incorrect trapezoidal numerical integration rules for the integral of sin(x)
